@@ -10,6 +10,7 @@ const {
   updateSubServiceDetailById,
 } = require("../controller/serviceController");
 
+const openServiceRouter = express.Router();
 const router = express.Router();
 
 // create only a service
@@ -17,9 +18,9 @@ router.post("/", createService);
 // add a subService for an existing service with details
 router.post("/:id", createSubServiceWithDetails);
 // get all services names
-router.get("/all/", getAllServicesNames);
+openServiceRouter.get("/all/", getAllServicesNames);
 // get all sub services with details
-router.get("/:id", getAllSubServicesWithDetails);
+openServiceRouter.get("/:id", getAllSubServicesWithDetails);
 // get all sub services nad their details with IDs
 router.get("/admin/:id", getAllSubServicesWithIDs);
 // update sub service by ID
@@ -30,4 +31,4 @@ router.put(
   updateSubServiceDetailById
 );
 
-module.exports = router;
+module.exports = { router, openServiceRouter };

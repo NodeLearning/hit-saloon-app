@@ -1,8 +1,7 @@
 const admin = require("firebase-admin");
 
 // Cloud Firestore
-const { Timestamp } = require('firebase-admin/firestore'); 
-
+const { Timestamp } = require("firebase-admin/firestore");
 
 const serviceAccount = require("../serviceAccountKey.json");
 
@@ -15,4 +14,4 @@ admin.initializeApp({
 //initialize db
 const dbFireStore = admin.firestore();
 
-module.exports = {dbFireStore, Timestamp} ;
+module.exports = { dbFireStore, Timestamp };

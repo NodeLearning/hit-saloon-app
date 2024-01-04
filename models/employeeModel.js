@@ -1,4 +1,3 @@
-
 class Employee {
   constructor(id, firstName, lastName, branch, joinDate) {
     (this.id = id),

@@ -1,24 +1,25 @@
-const firebaseConfig = require('../config/firebase-config');
-const Employee = require('../models/employeeModel');
+const firebaseConfig = require("../config/firebase-config");
+const Employee = require("../models/employeeModel");
 //destructuring properties
-const { dbFireStore, Timestamp} = firebaseConfig;
+const { dbFireStore, Timestamp } = firebaseConfig;
 
-const COLLECTION = 'employees'
+const COLLECTION = "employees";
 
 // create an employee
-const createEmployee = async (req,res) => {
-    try {
-        const data = { firstName : req.body.firstName,
-            lastName: req.body.lastName,
-            branch: req.body.branch,
-            joinDate: req.body.joinDate
-        }
-        const response = await dbFireStore.collection(COLLECTION).add(data);
-        res.status(200).send(response);
-    } catch (error) {
-        res.status(400).send({ Error: error.message });
-    }
-}
+const createEmployee = async (req, res) => {
+  try {
+    const data = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      branch: req.body.branch,
+      joinDate: req.body.joinDate,
+    };
+    const response = await dbFireStore.collection(COLLECTION).add(data);
+    res.status(200).send(response);
+  } catch (error) {
+    res.status(400).send({ Error: error.message });
+  }
+};
 
 // get all employees
 const getAllEmployees = async (req, res) => {
@@ -55,7 +56,6 @@ const getAllEmployees = async (req, res) => {
   }
 };
 
-
 // get by id
 const getEmployeeById = async (req, res) => {
   try {
@@ -64,7 +64,7 @@ const getEmployeeById = async (req, res) => {
     if (!response.empty) res.status(200).send(response.data());
     else res.status(404).send("Employee not found");
   } catch (error) {
-     res.status(400).send({ Error: error.message });
+    res.status(400).send({ Error: error.message });
   }
 };
 
@@ -94,5 +94,5 @@ module.exports = {
   getAllEmployees,
   getEmployeeById,
   updateEmployee,
-  deleteEmployee
+  deleteEmployee,
 };

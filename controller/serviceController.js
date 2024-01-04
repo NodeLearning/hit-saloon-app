@@ -233,7 +233,7 @@ const updateSubServiceDetailById = async (req, res) => {
     const detailRef = detailsRef.doc(detailId);
 
     const existingData = (await detailRef.get()).data();
-    
+
     // Merge existing data with the fields provided in the request
     const updateData = {
       ...existingData,
@@ -244,13 +244,11 @@ const updateSubServiceDetailById = async (req, res) => {
     };
 
     await detailRef.update(updateData);
-    res.status(200).send('Sub-service detail updated successfully');
+    res.status(200).send("Sub-service detail updated successfully");
   } catch (error) {
     res.status(400).send({ Error: error.message });
   }
 };
-
-
 
 module.exports = {
   createService,

@@ -1,15 +1,9 @@
-const dotenv = require('dotenv');
-const assert = require('assert');
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-const {NODE_ENV,
-PORT,
-FRONTEND } = process.env;
-
-// assert(PORT, "Port is required");
-// assert(HOST, "Host is required");
+const { NODE_ENV, PORT, FRONTEND } = process.env;
 
 module.exports = {
-  port : PORT
+  port: PORT,
 };

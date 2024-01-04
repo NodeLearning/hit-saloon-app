@@ -1,5 +1,5 @@
-const express = require('express');
-const Employee = require('../models/employeeModel');
+const express = require("express");
+const Employee = require("../models/employeeModel");
 
 const {
   createEmployee,
