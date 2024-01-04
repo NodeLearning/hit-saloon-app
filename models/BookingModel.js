@@ -1,5 +1,5 @@
 class Booking {
-  constructor(
+  constructor({
     id,
     firstName,
     lastName,
@@ -9,8 +9,8 @@ class Booking {
     subService,
     subServiceType,
     date,
-    timeSlot
-  ) {
+    timeSlot,
+  }) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;

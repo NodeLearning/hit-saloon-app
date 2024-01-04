@@ -6,6 +6,7 @@ const config = require('./config/config');
 // import routes
 const employeeRoute = require('./routes/employeeRoute');
 const serviceRoute = require('./routes/serviceRoute');
+const bookingRoute = require('./routes/bookingRoute');
 
 
 const app = express();
@@ -23,6 +24,9 @@ app.use(express.urlencoded({ extended: false }));
 //test
 
 //
+
+// routes customer
+app.use("/api/booking", bookingRoute);
 
 //routes admin
 app.use("/api/employee", employeeRoute);
